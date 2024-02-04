@@ -10,7 +10,9 @@ import { login } from '../controller/login.js';
 const router=express.Router();
 
 
-router.get('/',getdata)
+router.get('/',getdata,(req,res)=>{
+    res.send("Welcome")
+})
 
 
 
