@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import axios from 'axios'
+import { BASE_URL } from "../utils/url"
 
 const User = () => {
   const [user,setUser]=useState([])
@@ -9,7 +10,7 @@ const User = () => {
 
     const fetchdata=async()=>{
      try {
-          const res = await axios.get('http://localhost:7001/api/v1')
+          const res = await axios.get(`${BASE_URL}`)
           const data = res.data.data;
           console.log(data);
           setUser(data);
@@ -23,7 +24,7 @@ const User = () => {
 
 
   const handleDelete=async(id)=>{
-      const res=axios.delete(`http://localhost:7001/api/v1/delete/${id}`)
+      const res=axios.delete(`${BASE_URL}/delete/${id}`)
       window.location.reload();
       const result=res.data;
       console.log(result);

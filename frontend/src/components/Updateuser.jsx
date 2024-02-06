@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { BASE_URL } from "../utils/url";
 
 
 const Updateuser = () => {
@@ -12,7 +13,7 @@ const Updateuser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await axios.put(`http://localhost:7001/api/v1/users/${id}`,{email,password})
+    const res = await axios.put(`${BASE_URL}/users/${id}`,{email,password})
     const result = res.data.email;
     console.log(result);
     navigate('/users');
