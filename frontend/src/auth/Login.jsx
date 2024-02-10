@@ -31,8 +31,8 @@ const Login = () => {
                             <label htmlFor="" >Password :</label>
                             <input type="password" className="form-control" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                         </div>
-                        <button type="submit" className="btn btn-primary">Register</button>
-                        <p className="mt-3">Do not Have Account ? <Link to="/">Login</Link></p>
+                        <button type="submit" className="btn btn-primary">Login</button>
+                        <p className="mt-3">Do not Have Account ? <Link to="/">Register</Link></p>
                     </form>
                 </div>
             </div>

@@ -14,10 +14,10 @@ export const login = async (req, res) => {
     }
 
     try {
-        const user = await User.findOne({ email: email });
+        const user = await User.findOne({$or:[{ email: email, password: password}]});
 
         if (!user) {
-            return res.status(404).json({ message: "User not found" });
+            return res.status(404).json({ message: "User Not Found Check Email And Password And Try Again ..." });
         }
 
         // const isMatch = await bcrypt.compare(password, user.password.substring(0,10));
